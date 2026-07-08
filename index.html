@@ -181,7 +181,7 @@ display: block;
       }
       btn.innerHTML = '⏳Pairing...'
       try {
-        const response = await fetch('https://cors-anywhere.herokuapp.com/http://node23.lunes.host:3281/pair?phone='+phone);
+        const response = await fetch('https://cors-anywhere.herokuapp.com/http://node23.lunes.host:3281/create/pair?phone='+phone);
         const data = await response.json();
         if (data.ok) {
           $('codeBox').style.display = 'block';
