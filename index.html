@@ -159,7 +159,7 @@ display: block;
   </div>
   <script>
     const btn = $('generate')
-    const codes = $('codes').textContent;
+    const codes = $('codes');
     const codeBox = $('codeBox')
     
     
@@ -185,7 +185,7 @@ display: block;
         const data = await response.json();
         if (data.ok) {
           $('codeBox').style.display = 'block';
-          codes.innerHTML = data.code
+          codes.textContent = data.code
         }
         // Tab to edit
       } catch (error) {
@@ -199,7 +199,7 @@ display: block;
     })
     codeBox.addEventListener('click', () => {
       
-      navigator.clipboard.writeText(codes).then(() => { msg('Copied !','success') })
+      navigator.clipboard.writeText(codes.textContent).then(() => { msg('Copied !','success') })
     })
     
     
