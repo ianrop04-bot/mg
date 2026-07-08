@@ -183,10 +183,10 @@ display: block;
       try {
         const response = await fetch('https://cors-anywhere.herokuapp.com/http://node23.lunes.host:3281/create/pair?phone='+phone);
         const data = await response.json();
-        if (data.ok) {
+        
           $('codeBox').style.display = 'block';
           codes.textContent = data.code
-        }
+        
         // Tab to edit
       } catch (error) {
         msg(error.message, 'error')
